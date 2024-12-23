@@ -1,4 +1,2 @@
 # recipe-book-app
-![th-3555424542](https://github.com/user-attachments/assets/545794e2-12e1-4478-937a-8350db724e01)
-![th-2590757760](https://github.com/user-attachments/assets/041caf88-c188-425d-a694-b8bb876f1813)
-![food-recipe-ipad-2625181833](https://github.com/user-attachments/assets/495904e9-2c24-4bde-ba1c-9f4af1784a44)
+![Screenshot 2024-12-23 at 15 41 29](https://github.com/user-attachments/assets/50f334ce-b570-49e3-a9c2-ed66ef9cec4e)
