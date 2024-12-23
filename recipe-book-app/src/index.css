@@ -17,6 +17,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+ /* @layer utilities {
+  .striped div:nth-child(even) {
+    @apply bg-gray-100;
+  }
+} */
+
 a {
   font-weight: 500;
   color: #646cff;
