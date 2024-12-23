@@ -1,8 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    './src/**/*.{js,jsx}', './public/index.html',
-    './src/components/*.{html,jsx}',
+    './src/**/*.{html,jsx}',
+    './components/**/*.{html,jsx}',
+    './index.html',
   ],
   theme: {
     screens: {
