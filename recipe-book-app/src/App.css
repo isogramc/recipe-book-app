@@ -1,6 +1,24 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+}
+
+.side-bar{
+  position: absolute;
+  left: 0;
+  width: 350px;
+  background-color: white;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.side-bar ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.selected{
+  background-color: darkolivegreen;
+  color: whitesmoke;
 }
