@@ -4,7 +4,7 @@
   text-align: center;
 }
 
-.side-bar{
+.side-bar {
   position: absolute;
   left: 0;
   width: 350px;
@@ -18,7 +18,34 @@
   flex-direction: column;
 }
 
-.selected{
+.selected {
   background-color: darkolivegreen;
   color: whitesmoke;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo {
+  height: 100px;
+  margin-right: 20px;
+}
+
+.navbar h1 {
+  color: #fff;
+  font-size: 45px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer a {
+  color: white;
 }
