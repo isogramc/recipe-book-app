@@ -1,10 +1,12 @@
 function RecipeCard(props){
     const {id, image, calories, servings, name} = props;
+   
     function deleteItem(e){
         e.preventDefault();
         const elementToRemove = e.target.parentElement.parentElement;
         elementToRemove.remove();
     }
+
 return (
     <div id={id} className="grid grid-cols-4 content-end">
         <div className="bg-white overflow-hidden">
@@ -14,6 +16,7 @@ return (
         <div className="self-end">Calories: {calories}</div>
         <div className="self-end">Serves: {servings}</div>
         <div><button onClick={deleteItem}>Delete</button></div>
+       
     </div>
 )
 }
