@@ -4,118 +4,340 @@
     "name": "Pizza",
     "calories": 400,
     "image": "https://i.imgur.com/eTmWoAN.png",
-    "servings": 1
+    "description": "A classic Italian dish featuring a flatbread topped with tomato sauce, cheese, and various toppings",
+    "servings": 1,
+    "ingredients": [
+      "Pizza dough",
+      "Tomato sauce",
+      "Mozzarella cheese",
+      "Pepperoni slices",
+      "Olive oil",
+      "Italian herbs (basil, oregano)"
+    ],
+    "instructions": [
+      "Preheat the oven to 220°C (428°F).",
+      "Roll out the pizza dough on a floured surface.",
+      "Spread tomato sauce over the dough, leaving a small border around the edges.",
+      "Sprinkle mozzarella cheese evenly over the sauce.",
+      "Add pepperoni slices and sprinkle with Italian herbs.",
+      "Drizzle a little olive oil on top, Bake in the oven for 10-15 minutes or until the crust is golden brown."
+    ]
   },
   {
     "id": "37e0b31d-63f4-4d42-9f4b-e9a0fc464d60",
     "name": "Salad",
     "calories": 150,
     "image": "https://i.imgur.com/DupGBz5.jpg",
-    "servings": 1
+    "description": "A healthy and refreshing mix of fresh greens and vegetables",
+    "servings": 1,
+    "ingredients": [
+      "Mixed greens (lettuce, spinach, arugula)",
+      "Cherry tomatoes",
+      "Cucumber",
+      "Red onion",
+      "Olive oil",
+      "Lemon juice",
+      "Salt and pepper"
+    ],
+    "instructions": [
+      "Wash and dry the mixed greens.",
+      "Slice cherry tomatoes, cucumber, and red onion.",
+      "In a large bowl, combine the greens and vegetables.",
+      "Drizzle with olive oil and lemon juice.",
+      "Season with salt and pepper to taste.",
+      "Toss gently to combine."
+    ]
   },
   {
     "id": "b5eb5b5f-41b8-4f1f-8844-7a1a56a17df7",
     "name": "Sweet Potato",
     "calories": 120,
     "image": "https://i.imgur.com/hGraGyR.jpg",
-    "servings": 1
+    "description": "A nutritious and delicious root vegetable, naturally sweet and rich in vitamins.",
+    "servings": 1,
+    "ingredients": [
+      "Sweet potatoes",
+      "Olive oil",
+      "Salt",
+      "Pepper",
+      "Cinnamon (optional)"
+    ],
+    "instructions": [
+      "Preheat oven to 200°C (392°F).",
+      "Peel and slice sweet potatoes into wedges.",
+      "Toss in olive oil, salt, pepper, and cinnamon.",
+      "Arrange on a baking sheet in a single layer.",
+      "Roast for 25-30 minutes, flipping halfway through."
+    ]
   },
   {
     "id": "6c0f6f33-8c50-403d-9d1c-6ac9d8b77f29",
     "name": "Gnocchi",
     "calories": 500,
     "image": "https://i.imgur.com/93ekwW0.jpg",
-    "servings": 1
+    "description": "Soft, pillowy pasta made from potatoes, served with a rich tomato sauce.",
+    "servings": 1,
+    "ingredients": [
+      "Potato gnocchi",
+      "Tomato sauce",
+      "Parmesan cheese",
+      "Fresh basil",
+      "Olive oil",
+      "Salt",
+      "Pepper"
+    ],
+    "instructions": [
+      "Cook gnocchi in boiling salted water until they float to the top.",
+      "Drain and toss with olive oil.",
+      "Simmer tomato sauce in a pan.",
+      "Add gnocchi to the sauce and mix well.",
+      "Serve with grated Parmesan and fresh basil."
+    ]
   },
   {
     "id": "f4b4d2bc-ff12-4f3f-b3b3-19d2f1682401",
     "name": "Pot Roast",
     "calories": 350,
     "image": "https://i.imgur.com/WCzJDWz.jpg",
-    "servings": 1
+    "description": "A savory and hearty beef dish, slow-cooked to perfection with vegetables.",
+    "servings": 1,
+    "ingredients": [
+      "Beef roast",
+      "Carrots",
+      "Potatoes",
+      "Onion",
+      "Garlic",
+      "Beef broth",
+      "Olive oil",
+      "Salt",
+      "Pepper"
+    ],
+    "instructions": [
+      "Preheat oven to 160°C (320°F).",
+      "Season the beef with salt and pepper.",
+      "Brown it in a pot with olive oil.",
+      "Add chopped vegetables and garlic.",
+      "Pour in beef broth.",
+      "Cover and roast in the oven for 3-4 hours."
+    ]
   },
   {
     "id": "bf89c1db-5c5b-4262-9d1e-8a68f88c61d5",
     "name": "Lasagna",
     "calories": 750,
     "image": "https://i.imgur.com/ClxOafl.jpg",
-    "servings": 1
+    "description": "Layers of pasta, rich meat sauce, and creamy cheese baked to perfection.",
+    "servings": 1,
+    "ingredients": [
+      "Lasagna noodles",
+      "Ground beef",
+      "Tomato sauce",
+      "Ricotta cheese",
+      "Mozzarella cheese",
+      "Parmesan cheese",
+      "Italian herbs"
+    ],
+    "instructions": [
+      "Cook lasagna noodles as per package instructions.",
+      "Brown ground beef in a pan.",
+      "Add tomato sauce and Italian herbs to beef, simmer.",
+      "Layer noodles, meat sauce, ricotta, and mozzarella in a baking dish.",
+      "Repeat layers, finishing with cheese.",
+      "Bake at 180°C (356°F) for 45 minutes."
+    ]
   },
   {
     "id": "bca9beec-43d3-48b1-9b57-793a8a8c3520",
     "name": "Hamburger",
     "calories": 400,
     "image": "https://i.imgur.com/LoG39wK.jpg",
-    "servings": 1
+    "description": "A juicy beef patty served in a bun with your favorite toppings.",
+    "servings": 1,
+    "ingredients": [
+      "Ground beef",
+      "Burger buns",
+      "Lettuce",
+      "Tomato",
+      "Cheese slices",
+      "Salt",
+      "Pepper",
+      "Ketchup",
+      "Mustard"
+    ],
+    "instructions": [
+      "Form ground beef into patties, season with salt and pepper.",
+      "Cook patties on a grill or pan over medium heat.",
+      "Assemble burgers with buns, lettuce, tomato, cheese, and condiments."
+    ]
   },
   {
     "id": "b777a69a-7f1c-41e8-8a4c-1d0e9e4cace8",
     "name": "Pad Thai",
     "calories": 475,
     "image": "https://i.imgur.com/5ktcSzF.jpg",
-    "servings": 1
+    "description": "A popular Thai noodle dish with a sweet and tangy sauce, mixed with chicken or tofu.",
+    "servings": 1,
+    "ingredients": [
+      "Rice noodles",
+      "Chicken breast or tofu",
+      "Bean sprouts",
+      "Egg",
+      "Peanuts",
+      "Green onions",
+      "Pad Thai sauce"
+    ],
+    "instructions": [
+      "Cook rice noodles according to package instructions.",
+      "Stir-fry chicken or tofu until cooked through.",
+      "Add bean sprouts and noodles, toss together.",
+      "Stir in Pad Thai sauce and cook for 2 minutes.",
+      "Push everything to one side of the pan, add egg, scramble, and mix.",
+      "Garnish with peanuts and green onions."
+    ]
   },
   {
     "id": "d087343e-9a92-48c7-8b27-43e37491b6f5",
     "name": "Almonds",
     "calories": 75,
     "image": "https://i.imgur.com/JRp4Ksx.jpg",
-    "servings": 1
+    "description": "Crunchy and nutritious nuts, great as a snack or an ingredient in dishes.",
+    "servings": 1,
+    "ingredients": ["Whole almonds"],
+    "instructions": [
+      "Enjoy raw or lightly toast almonds in a pan over medium heat."
+    ]
   },
   {
     "id": "e1f87a2e-60b3-4a3f-bb48-20a396a9a94f",
     "name": "Sarma",
     "calories": 200,
     "image": "https://i.imgur.com/yOlf4Fj.jpg",
-    "servings": 1
+    "description": "Traditional dish featuring grape leaves stuffed with rice and meat.",
+    "servings": 1,
+    "ingredients": [
+      "Grape leaves",
+      "Ground beef or lamb",
+      "Rice",
+      "Onion",
+      "Olive oil",
+      "Lemon juice"
+    ],
+    "instructions": [
+      "Combine meat, rice, and chopped onion.",
+      "Roll mixture in grape leaves.",
+      "Arrange in a pot, cover with water and lemon juice.",
+      "Simmer on low heat for 1-1.5 hours."
+    ]
   },
   {
     "id": "0ce7e4d4-1c8a-4e9f-98df-1ecb1e7b8a0b",
     "name": "Bacon",
     "calories": 175,
     "image": "https://i.imgur.com/7GlqDsG.jpg",
-    "servings": 1
+    "description": "Crispy, salty slices of cured pork, perfect for breakfast or as a flavor booster.",
+    "servings": 1,
+    "ingredients": ["Bacon strips"],
+    "instructions": [
+      "Cook bacon in a pan over medium heat until crispy.",
+      "Drain on paper towels."
+    ]
   },
   {
     "id": "bbfd30fd-cd75-4e3b-8fc8-3d3fd62a3c39",
     "name": "Hot Dog",
     "calories": 275,
     "image": "https://i.imgur.com/QqVHdRu.jpg",
-    "servings": 1
+    "description": "A classic American snack consisting of a sausage served in a bun.",
+    "servings": 1,
+    "ingredients": [
+      "Hot dog sausages",
+      "Hot dog buns",
+      "Ketchup",
+      "Mustard",
+      "Relish"
+    ],
+    "instructions": [
+      "Boil or grill hot dog sausages.",
+      "Place in buns and top with desired condiments."
+    ]
   },
   {
     "id": "1c6d5b5f-4e72-4136-8c6c-9cf3e3d16a65",
     "name": "Chocolate Cake",
     "calories": 490,
     "image": "https://i.imgur.com/yrgzA9x.jpg",
-    "servings": 1
+    "description": "Rich and moist chocolate cake, perfect for any dessert lover.",
+    "servings": 1,
+    "ingredients": [
+      "All-purpose flour",
+      "Cocoa powder",
+      "Sugar",
+      "Baking powder",
+      "Eggs",
+      "Butter",
+      "Milk",
+      "Chocolate frosting"
+    ],
+    "instructions": [
+      "Preheat oven to 180°C (356°F).",
+      "Mix dry ingredients in one bowl.",
+      "Beat eggs, butter, and milk in another bowl.",
+      "Combine and pour into a greased cake pan.",
+      "Bake for 30-35 minutes until a toothpick comes out clean.",
+      "Let cool, then frost with chocolate frosting."
+    ]
   },
   {
     "id": "07d9616d-7a63-457c-b8a7-58f6a70a67e3",
     "name": "Wheat Bread",
     "calories": 175,
     "image": "https://i.imgur.com/TsWzMfM.jpg",
-    "servings": 1
+    "description": "Nutty and wholesome whole wheat bread, great for sandwiches and toasts.",
+    "servings": 1,
+    "ingredients": [
+      "Whole wheat flour",
+      "Yeast",
+      "Warm water",
+      "Salt",
+      "Olive oil"
+    ],
+    "instructions": [
+      "Mix warm water, yeast, and oil.",
+      "Add flour and salt, knead into a dough.",
+      "Let rise until doubled in size.",
+      "Shape into a loaf and bake at 180°C (356°F) for 30-35 minutes."
+    ]
   },
   {
     "id": "d7a8f0c1-0a34-4e3b-a2d3-3c3e3f11eb19",
     "name": "Orange",
     "calories": 85,
     "image": "https://i.imgur.com/abKGOcv.jpg",
-    "servings": 1
+    "description": "Sweet and juicy, oranges are a refreshing and healthy snack.",
+    "servings": 1,
+    "ingredients": ["Oranges"],
+    "instructions": ["Peel and segment oranges to enjoy as a snack."]
   },
   {
     "id": "a8d111c4-50ef-4c61-8b16-17e84a86b2f4",
     "name": "Banana",
     "calories": 175,
     "image": "https://i.imgur.com/BMdJhu5.jpg",
-    "servings": 1
+    "description": "A sweet and convenient fruit, rich in potassium and easy to eat on the go.",
+    "servings": 1,
+    "ingredients": ["Bananas"],
+    "instructions": ["Peel and eat bananas raw."]
   },
   {
     "id": "62d8a0bc-1b77-4389-9e7b-2e00cace6a2e",
     "name": "Yogurt",
     "calories": 125,
     "image": "https://i.imgur.com/URhdrAm.png",
-    "servings": 1
+    "description": "Creamy and tangy yogurt, perfect as a breakfast or dessert with fruits and honey.",
+    "servings": 1,
+    "ingredients": ["Plain yogurt"],
+    "instructions": [
+      "Serve yogurt as is or top with fruits, nuts, and honey for added flavor."
+    ]
   }
 ]

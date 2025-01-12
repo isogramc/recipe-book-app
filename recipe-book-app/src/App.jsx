@@ -4,6 +4,7 @@ import "./App.css";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ErrorPage from "./pages/ErrorPage";
+import RecipeDetailPage from "./pages/RecipeDetailPage";
 import SideBar from "./components/SideBar";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/recipe/:id" element={<RecipeDetailPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
