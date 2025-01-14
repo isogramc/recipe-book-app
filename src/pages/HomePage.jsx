@@ -1,16 +1,14 @@
 
 import RecipeList from './../components/RecipeList'
 
-function HomePage(){
+function HomePage(props){
     return (
-        <div>
-            <h1 className="text-3xl font-bold underline">
-                Hello world!
+        <div className="home-page">
+            <h1 className="text-3xl font-bold">
+                My Recipes
             </h1>
-            <div>This is the home page</div>
-            <RecipeList />
-        </div>
-        
+            <RecipeList props={props}/>
+        </div> 
     )
 }
 

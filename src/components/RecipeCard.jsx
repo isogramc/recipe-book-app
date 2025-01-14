@@ -1,10 +1,9 @@
 function RecipeCard(props){
-    const {id, image, calories, servings, name} = props;
+    const {id, image, calories, servings, name, deleteItem} = props;
    
-    function deleteItem(e){
+    function deleteItemCard(e){
         e.preventDefault();
-        const elementToRemove = e.target.parentElement.parentElement;
-        elementToRemove.remove();
+        deleteItem(id);
     }
 
 return (
@@ -15,7 +14,7 @@ return (
         <div className="justify-self-start self-end">{name} Recipe</div>
         <div className="self-end">Calories: {calories}</div>
         <div className="self-end">Serves: {servings}</div>
-        <div><button onClick={deleteItem}>Delete</button></div>
+        <div><button onClick={deleteItemCard}>Delete</button></div>
        
     </div>
 )

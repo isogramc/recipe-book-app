@@ -1,17 +1,28 @@
-import React, { useState } from "react";
-import Recipes from "./../assets/basic-recipes.json";
+import React, { useEffect, useState } from "react";
 import RecipeCard from "./RecipeCard";
+import { Link } from 'react-router-dom';
 
-{
-  /* <div className="h-32 grid gap-x-4 gap-y-4 grid-cols-4 content-end striped"> */
-}
 
-function RecipeList() {
+function RecipeList(props) {
+
+  const [recipes, setRecipes] = useState(props.props.props);
   const [calorieLimit, setCalorieLimit] = useState("");
 
   const handleCalorieChange = (event) => {
-    setCalorieLimit(event.target.value);
+     setCalorieLimit(event.target.value);
   };
+
+  function deleteItem(id){
+    const recipesCopy = [...recipes];
+    let idToDelete = 0;
+    recipesCopy.map((recipe, index)=>{
+      if(recipe.id===id){
+        idToDelete = index;
+      }
+    });
+    recipesCopy.splice(idToDelete, 1);
+    setRecipes(recipesCopy);
+  }
 
   return (
     <div>
@@ -25,14 +36,18 @@ function RecipeList() {
         />
       </form>
 
-      {Recipes.filter((recipe) => {
+      {recipes?.filter((recipe, index) => {
         if (calorieLimit === "") {
           return true;
         }
 
         return recipe.calories <= calorieLimit;
       }).map((recipe) => (
-        <RecipeCard key={recipe.id} {...recipe} />
+
+       <Link to={`recipes/${recipe.id}`}> 
+          <RecipeCard key={recipe.id} {...recipe} deleteItem={deleteItem}/> 
+       </Link>
+
       ))}
     </div>
   );
