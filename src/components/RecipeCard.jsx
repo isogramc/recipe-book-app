@@ -1,3 +1,4 @@
+
 function RecipeCard(props){
     const {id, image, calories, servings, name, deleteItem} = props;
    
@@ -6,7 +7,7 @@ function RecipeCard(props){
         deleteItem(id);
     }
 
-return (
+  return (
     <div id={id} className="grid grid-cols-5 content-end">
         <div className="bg-white overflow-hidden">
             <img className="w-16 md:w-24 lg:w-38" src={image} alt={name}/>
@@ -15,8 +16,7 @@ return (
         <div className="self-end">Calories: {calories}</div>
         <div className="self-end">Serves: {servings}</div>
         <div><button onClick={deleteItemCard}>Delete</button></div>
-       
     </div>
-)
+  );
 }
 export default RecipeCard;
