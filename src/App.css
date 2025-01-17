@@ -4,7 +4,7 @@
   text-align: center;
 }
 
-.home-page{
+.home-page {
   margin-left: 300px;
 }
 
@@ -60,4 +60,13 @@ input#calorieLimit {
   border: 1px solid #ccc;
   padding: 0.5rem;
   border-radius: 5px;
+}
+
+.form-input {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 100%;
 }

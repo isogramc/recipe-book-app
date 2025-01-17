@@ -1,27 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import RecipeCard from "./RecipeCard";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-
-function RecipeList(props) {
-
-  const [recipes, setRecipes] = useState(props.props.props);
+function RecipeList({ recipes, setRecipes }) {
   const [calorieLimit, setCalorieLimit] = useState("");
 
   const handleCalorieChange = (event) => {
-     setCalorieLimit(event.target.value);
+    setCalorieLimit(event.target.value);
   };
 
-  function deleteItem(id){
-    const recipesCopy = [...recipes];
-    let idToDelete = 0;
-    recipesCopy.map((recipe, index)=>{
-      if(recipe.id===id){
-        idToDelete = index;
-      }
-    });
-    recipesCopy.splice(idToDelete, 1);
-    setRecipes(recipesCopy);
+  function deleteItem(id) {
+    const updatedRecipes = recipes.filter((recipe) => recipe.id !== id);
+    setRecipes(updatedRecipes);
   }
 
   return (
@@ -36,22 +26,18 @@ function RecipeList(props) {
         />
       </form>
 
-      {recipes?.filter((recipe, index) => {
-        if (calorieLimit === "") {
-          return true;
-        }
-
-        return recipe.calories <= calorieLimit;
-      }).map((recipe) => (
-
-       <Link to={`recipes/${recipe.id}`}> 
-          <RecipeCard key={recipe.id} {...recipe} deleteItem={deleteItem}/> 
-       </Link>
-
-      ))}
+      {recipes
+        ?.filter((recipe) => {
+          if (calorieLimit === "") return true;
+          return recipe.calories <= calorieLimit;
+        })
+        .map((recipe) => (
+          <Link to={`recipe/${recipe.id}`} key={recipe.id}>
+            <RecipeCard {...recipe} deleteItem={deleteItem} />
+          </Link>
+        ))}
     </div>
   );
 }
 
 export default RecipeList;
-onabort
