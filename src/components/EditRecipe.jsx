@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FileUpload from "./FileUpload";
 
 function EditRecipe({ recipe, editRecipe }) {
   const [formData, setFormData] = useState({
@@ -129,6 +130,7 @@ function EditRecipe({ recipe, editRecipe }) {
           />
         </label>
       </div>
+      <div><FileUpload /></div>
       <button type="submit">Edit Recipe</button>
     </form>
   );
