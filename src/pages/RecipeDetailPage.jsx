@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import Recipes from "../assets/basic-recipes.json";
+import { useState } from "react";
 
 function RecipeDetailPage() {
   const { id } = useParams();
@@ -7,6 +8,10 @@ function RecipeDetailPage() {
 
   if (!recipe) {
     return <div>Recipe not found!</div>;
+  }
+
+  function editRecipe(updatedRecipe){
+    console.log(updatedRecipe);
   }
 
   return (
