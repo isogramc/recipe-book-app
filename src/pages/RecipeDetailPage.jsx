@@ -1,8 +1,16 @@
 import { useParams } from "react-router-dom";
 import Recipes from "../assets/basic-recipes.json";
 import { useState } from "react";
+import { Cloudinary } from '@cloudinary/url-gen';
+import { AdvancedImage, responsive, placeholder } from '@cloudinary/react';
 
 function RecipeDetailPage() {
+  const cloudName = 'dwyipecoa';
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName,
+    },
+  });
   const { id } = useParams();
   const recipe = Recipes.find((recipe) => recipe.id === id);
 
@@ -17,7 +25,14 @@ function RecipeDetailPage() {
   return (
     <div>
       <h2> {recipe.name}</h2>
-      <img src={recipe.image} alt={recipe.name} />
+
+      {recipe.imageInCloud && (
+          <div className="image-preview" style={{ width: '500px', margin: '0px auto' }}>
+            <AdvancedImage style={{ maxWidth: '100%' }} cldImg={cld.image(recipe.image)} plugins={[responsive(), placeholder()]} />
+          </div>
+        )}
+         {!recipe.imageInCloud && <img src={recipe.image} alt={recipe.name}/>}
+
       <p>Servings: {recipe.servings}</p>
 
       <h3>Ingredients:</h3>

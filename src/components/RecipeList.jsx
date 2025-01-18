@@ -63,7 +63,9 @@ function RecipeList({ recipes, setRecipes, handleOpen }) {
         })
         .map((recipe) => (
           <Link to={`recipe/${recipe.id}`} key={recipe.id}>
-            <RecipeCard {...recipe} deleteItem={deleteItem} handleOpen={handleOpen}/>
+            <div class="inline">
+              <RecipeCard {...recipe} deleteItem={deleteItem} handleOpen={handleOpen}/>
+            </div>
           </Link>
         ))}
     </div>

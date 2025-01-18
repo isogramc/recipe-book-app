@@ -1,16 +1,32 @@
 import React, { useState } from "react";
 import FileUpload from "./FileUpload";
+import { Cloudinary } from '@cloudinary/url-gen';
+import { AdvancedImage, responsive, placeholder } from '@cloudinary/react';
+import CloudWidget from "./CloudWidget";
 
 function EditRecipe({ recipe, editRecipe }) {
+  const cloudName = 'dwyipecoa';
+
+  // State
+  const [publicId, setPublicId] = useState('');
+  const [imageCloud, setImageCloud] = useState(recipe.imageInCloud);
+
   const [formData, setFormData] = useState({
     id: recipe.id,
     name: recipe.name,
     calories: recipe.calories,
     image: recipe.image,
+    imageInCloud: recipe.imageInCloud,
     description: recipe.description,
     servings: recipe.servings,
     ingredients: recipe.ingredients,
     instructions: recipe.instructions,
+  });
+
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName,
+    },
   });
 
   const handleChange = (e) => {
@@ -21,8 +37,16 @@ function EditRecipe({ recipe, editRecipe }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    let updatedRecipe = {};
+
+    if(imageCloud){
+      updatedRecipe = { ...formData, image: publicId, imageInCloud: true };
+    }else{
+      updatedRecipe = { ...formData };
+    }
+
     // Create a new recipe object with a unique ID and split ingredients & instructions
-    const updatedRecipe = { ...formData };
+    console.log(updatedRecipe);
 
     // Call addRecipe function passed as prop to add new recipe
     editRecipe(updatedRecipe);
@@ -30,6 +54,7 @@ function EditRecipe({ recipe, editRecipe }) {
     // Clear the form
     setFormData({
       id: "",
+      imageInCloud: false,
       name: "",
       calories: "",
       image: "",
@@ -40,8 +65,8 @@ function EditRecipe({ recipe, editRecipe }) {
     });
   };
 
-  return (
-    <form onSubmit={handleSubmit}>
+  return (<div>
+ <form onSubmit={handleSubmit}>
       <div>
         <label>
           Name:
@@ -69,7 +94,7 @@ function EditRecipe({ recipe, editRecipe }) {
         </label>
       </div>
       <div>
-        <label>
+       {!imageCloud && <label>
           Image URL:
           <input
             className="form-input"
@@ -79,7 +104,15 @@ function EditRecipe({ recipe, editRecipe }) {
             onChange={handleChange}
             required
           />
-        </label>
+        </label>}
+
+       <div className="cloud-widget"> <CloudWidget customPublicId={publicId} setPublicId={setPublicId} setImageCloud={setImageCloud}/>
+        {(publicId!=="") && (
+          <div className="image-preview" style={{ width: '50px', margin: '20px auto' }}>
+            <AdvancedImage style={{ maxWidth: '100%' }} cldImg={cld.image(publicId)} plugins={[responsive(), placeholder()]} />
+          </div>
+        )}
+      </div>
       </div>
       <div>
         <label>
@@ -130,9 +163,11 @@ function EditRecipe({ recipe, editRecipe }) {
           />
         </label>
       </div>
-      <div><FileUpload /></div>
       <button type="submit">Edit Recipe</button>
     </form>
+
+ 
+  </div>
   );
 }
 
