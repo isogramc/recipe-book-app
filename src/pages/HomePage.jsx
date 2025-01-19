@@ -4,11 +4,16 @@ import RecipeForm from "../components/RecipeForm";
 import SearchBox from "../components/SearchBar";
 
 function HomePage({ props }) {
+  const [originalRecipes] = useState(props);
   const [recipes, setRecipes] = useState(props);
   const [showForm, setShowForm] = useState(false);
 
   const addRecipe = (newRecipe) => {
-    setRecipes((prevRecipes) => [...prevRecipes, newRecipe]);
+    setRecipes((prevRecipes) => {
+      const updatedRecipes = [...prevRecipes, newRecipe];
+      originalRecipes.push(newRecipe);
+      return updatedRecipes;
+    });
     setShowForm(false);
   };
 
@@ -17,28 +22,15 @@ function HomePage({ props }) {
   };
 
   function doSearch(e) {
-    //console.log(e.target.value);
-    let searchstr = e.target.value;
-    let searchStrlength = searchstr.length;
-    const foodsCopy = [...recipes];
-    const arr = [];
-    const foodArr = foodsCopy.map((food) => {
-      if (
-        food.name.charAt(0).toLowerCase() === searchstr.charAt(0).toLowerCase()
-      ) {
-        if (
-          food.name.toLowerCase().substring(0, searchStrlength) ===
-          searchstr.toLowerCase()
-        ) {
-          arr.push(food);
-        }
-      }
-    });
-    // console.log(arr);
-    if (searchStrlength > 0) {
-      setRecipes(arr);
+    const searchStr = e.target.value.toLowerCase();
+
+    if (searchStr.length > 0) {
+      const filteredRecipes = originalRecipes.filter((food) =>
+        food.name.toLowerCase().startsWith(searchStr)
+      );
+      setRecipes(filteredRecipes);
     } else {
-      setRecipes(foodsCopy);
+      setRecipes(originalRecipes);
     }
   }
 
