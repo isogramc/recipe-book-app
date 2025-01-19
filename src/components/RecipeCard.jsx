@@ -1,6 +1,15 @@
 
+import { Cloudinary } from '@cloudinary/url-gen';
+import { AdvancedImage, responsive, placeholder } from '@cloudinary/react';
+
 function RecipeCard(props){
-    const {id, image, calories, servings, name, deleteItem, handleOpen} = props;
+    const {id, image, imageInCloud, calories, servings, name, deleteItem, handleOpen} = props;
+    const cloudName = 'dwyipecoa';
+    const cld = new Cloudinary({
+      cloud: {
+        cloudName,
+      },
+    });
    
     function deleteItemCard(e){
         e.preventDefault();
@@ -13,16 +22,25 @@ function RecipeCard(props){
     }
 
   return (
-    <div id={id} className="grid grid-cols-5 content-end">
-        <div className="bg-white overflow-hidden">
-            <img className="w-16 md:w-24 lg:w-38" src={image} alt={name}/>
+      <div class="inline-block rounded overflow-hidden shadow-lg" style={{margin: '1em'}}>
+        {imageInCloud && (<div class='w-full overflow-hidden'>
+            <AdvancedImage cldImg={cld.image(image)} plugins={[responsive(), placeholder()]} />
+          </div>
+        )}
+        {!imageInCloud && <div class='w-full overflow-hidden' style={{maxHeight: '150px', maxWidth: '250px'}}>
+          <img style={{width: '300px', height: 'auto'}} src={image} alt={name}/>
+          </div>}
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">{name} Recipe</div>
+            <div class="text-gray-700 text-base">
+              <div>Calories: {calories}</div>
+              <div>Serves: {servings}</div>
+            </div>
         </div>
-        <div className="justify-self-start self-end">{name} Recipe</div>
-        <div className="self-end">Calories: {calories}</div>
-        <div className="self-end">Serves: {servings}</div>
-        <div><button onClick={deleteItemCard}>Delete</button>
-        <button onClick={sendId}>Edit</button>
-        </div>
+      <div class="px-6 pt-4 pb-2">
+          <button onClick={deleteItemCard} style={{marginRight: "0.5em"}}>Delete</button>
+          <button onClick={sendId}>Edit</button>
+      </div>
     </div>
   );
 }

@@ -1,9 +1,10 @@
 [
   {
     "id": "9e7f0d61-aa6b-418a-b56a-6418d19e6e1d",
-    "name": "Pizza",
+    "name": "Gluten Free Pizza",
     "calories": 400,
-    "image": "https://i.imgur.com/eTmWoAN.png",
+    "image": "my_folder/gf-pizza-1648877392_xvzhea",
+    "imageInCloud": true,
     "description": "A classic Italian dish featuring a flatbread topped with tomato sauce, cheese, and various toppings",
     "servings": 1,
     "ingredients": [
@@ -53,6 +54,7 @@
     "name": "Sweet Potato",
     "calories": 120,
     "image": "https://i.imgur.com/hGraGyR.jpg",
+    "imageInCloud": false,
     "description": "A nutritious and delicious root vegetable, naturally sweet and rich in vitamins.",
     "servings": 1,
     "ingredients": [
@@ -75,6 +77,7 @@
     "name": "Gnocchi",
     "calories": 500,
     "image": "https://i.imgur.com/93ekwW0.jpg",
+    "imageInCloud": false,
     "description": "Soft, pillowy pasta made from potatoes, served with a rich tomato sauce.",
     "servings": 1,
     "ingredients": [
@@ -99,6 +102,7 @@
     "name": "Pot Roast",
     "calories": 350,
     "image": "https://i.imgur.com/WCzJDWz.jpg",
+    "imageInCloud": false,
     "description": "A savory and hearty beef dish, slow-cooked to perfection with vegetables.",
     "servings": 1,
     "ingredients": [
@@ -126,6 +130,7 @@
     "name": "Lasagna",
     "calories": 750,
     "image": "https://i.imgur.com/ClxOafl.jpg",
+    "imageInCloud": false,
     "description": "Layers of pasta, rich meat sauce, and creamy cheese baked to perfection.",
     "servings": 1,
     "ingredients": [
@@ -151,6 +156,7 @@
     "name": "Hamburger",
     "calories": 400,
     "image": "https://i.imgur.com/LoG39wK.jpg",
+    "imageInCloud": false,
     "description": "A juicy beef patty served in a bun with your favorite toppings.",
     "servings": 1,
     "ingredients": [
@@ -175,6 +181,7 @@
     "name": "Pad Thai",
     "calories": 475,
     "image": "https://i.imgur.com/5ktcSzF.jpg",
+    "imageInCloud": false,
     "description": "A popular Thai noodle dish with a sweet and tangy sauce, mixed with chicken or tofu.",
     "servings": 1,
     "ingredients": [
@@ -200,6 +207,7 @@
     "name": "Almonds",
     "calories": 75,
     "image": "https://i.imgur.com/JRp4Ksx.jpg",
+    "imageInCloud": false,
     "description": "Crunchy and nutritious nuts, great as a snack or an ingredient in dishes.",
     "servings": 1,
     "ingredients": ["Whole almonds"],
@@ -212,6 +220,7 @@
     "name": "Sarma",
     "calories": 200,
     "image": "https://i.imgur.com/yOlf4Fj.jpg",
+    "imageInCloud": false,
     "description": "Traditional dish featuring grape leaves stuffed with rice and meat.",
     "servings": 1,
     "ingredients": [
@@ -234,6 +243,7 @@
     "name": "Bacon",
     "calories": 175,
     "image": "https://i.imgur.com/7GlqDsG.jpg",
+    "imageInCloud": false,
     "description": "Crispy, salty slices of cured pork, perfect for breakfast or as a flavor booster.",
     "servings": 1,
     "ingredients": ["Bacon strips"],
@@ -247,6 +257,7 @@
     "name": "Hot Dog",
     "calories": 275,
     "image": "https://i.imgur.com/QqVHdRu.jpg",
+    "imageInCloud": false,
     "description": "A classic American snack consisting of a sausage served in a bun.",
     "servings": 1,
     "ingredients": [
@@ -292,6 +303,7 @@
     "name": "Wheat Bread",
     "calories": 175,
     "image": "https://i.imgur.com/TsWzMfM.jpg",
+    "imageInCloud": false,
     "description": "Nutty and wholesome whole wheat bread, great for sandwiches and toasts.",
     "servings": 1,
     "ingredients": [
@@ -313,6 +325,7 @@
     "name": "Orange",
     "calories": 85,
     "image": "https://i.imgur.com/abKGOcv.jpg",
+    "imageInCloud": false,
     "description": "Sweet and juicy, oranges are a refreshing and healthy snack.",
     "servings": 1,
     "ingredients": ["Oranges"],
@@ -323,6 +336,7 @@
     "name": "Banana",
     "calories": 175,
     "image": "https://i.imgur.com/BMdJhu5.jpg",
+    "imageInCloud": false,
     "description": "A sweet and convenient fruit, rich in potassium and easy to eat on the go.",
     "servings": 1,
     "ingredients": ["Bananas"],
@@ -333,6 +347,7 @@
     "name": "Yogurt",
     "calories": 125,
     "image": "https://i.imgur.com/URhdrAm.png",
+    "imageInCloud": false,
     "description": "Creamy and tangy yogurt, perfect as a breakfast or dessert with fruits and honey.",
     "servings": 1,
     "ingredients": ["Plain yogurt"],
