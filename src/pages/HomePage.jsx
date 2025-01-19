@@ -6,6 +6,8 @@ import SearchBox from "../components/SearchBar";
 function HomePage({ props }) {
   const [recipes, setRecipes] = useState(props);
   const [showForm, setShowForm] = useState(false);
+  const [showSearchBar, setShowSearchBar] = useState(false);
+  const [showSearchByCals, setShowSearchByCals] = useState(false);
 
   const addRecipe = (newRecipe) => {
     setRecipes((prevRecipes) => [...prevRecipes, newRecipe]);
@@ -14,6 +16,14 @@ function HomePage({ props }) {
 
   const handleToggleForm = () => {
     setShowForm((prevShowForm) => !prevShowForm);
+  };
+
+  const handleToggleSearch = () => {
+    setShowSearchBar(!showSearchBar);
+  };
+
+  const handleToggleSearchbyCals = () => {
+    setShowSearchByCals(!showSearchByCals);
   };
 
   function doSearch(e) {
@@ -44,15 +54,21 @@ function HomePage({ props }) {
 
   return (
     <div className="home-page">
-      <h1 className="text-3xl font-bold">My Recipes</h1>
-      <button onClick={handleToggleForm}>
-        {showForm ? "Hide Form" : "Add Recipe"}
-      </button>
-
-      {showForm && <RecipeForm addRecipe={addRecipe} />}
-
-      <SearchBox doSearch={doSearch} />
-      <RecipeList recipes={recipes} setRecipes={setRecipes} />
+      <div class="bg-white py-2 px-3">
+        <h1 className="text-3xl" style={{marginBottom: '0.5em'}}>My Recipes</h1>
+        <button className="btn-block" onClick={handleToggleForm}>
+          {showForm ? "Hide Form" : "Add Recipe"}
+        </button>
+        <button className="btn-block" onClick={handleToggleSearch}>
+          {showSearchBar ? "Hide Searchbar" : "Search"}
+        </button>
+        <button className="btn-block" onClick={handleToggleSearchbyCals}>
+          {showSearchByCals ? "Hide Search by Cals" : "Search by Cals"}
+        </button>
+        {showForm && <RecipeForm addRecipe={addRecipe} />}
+        {showSearchBar && <SearchBox doSearch={doSearch} />}
+      </div>
+      <RecipeList recipes={recipes} setRecipes={setRecipes} showSearchByCals={showSearchByCals}/>
     </div>
   );
 }

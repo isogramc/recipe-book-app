@@ -1,6 +1,7 @@
 
 import { Cloudinary } from '@cloudinary/url-gen';
 import { AdvancedImage, responsive, placeholder } from '@cloudinary/react';
+import { center } from '@cloudinary/url-gen/qualifiers/textAlignment';
 
 function RecipeCard(props){
     const {id, image, imageInCloud, calories, servings, name, deleteItem, handleOpen} = props;
@@ -22,16 +23,16 @@ function RecipeCard(props){
     }
 
   return (
-      <div class="inline-block rounded overflow-hidden shadow-lg" style={{margin: '1em'}}>
-        {imageInCloud && (<div class='w-full overflow-hidden'>
+      <div class="inline-block rounded overflow-hidden shadow-lg" style={{margin: '1em', width: '250px', backgroundColor: 'white'}}>
+        {imageInCloud && (<div class='w-full overflow-hidden'  style={{height: '150px', width: '300px', verticalAlign: 'center'}}>
             <AdvancedImage cldImg={cld.image(image)} plugins={[responsive(), placeholder()]} />
           </div>
         )}
-        {!imageInCloud && <div class='w-full overflow-hidden' style={{maxHeight: '150px', maxWidth: '250px'}}>
-          <img style={{width: '300px', height: 'auto'}} src={image} alt={name}/>
+        {!imageInCloud && <div class='w-full overflow-hidden' style={{height: '150px', width: '300px'}}>
+          <img style={{minWidth: '300px', minHeight: '150px'}} src={image} alt={name}/>
           </div>}
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">{name} Recipe</div>
+          <div class="font-bold text-xl mb-2">{name}</div>
             <div class="text-gray-700 text-base">
               <div>Calories: {calories}</div>
               <div>Serves: {servings}</div>

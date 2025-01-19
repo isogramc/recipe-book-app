@@ -1,18 +1,37 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   text-align: center;
 }
 .home-page {
   margin-left: 300px;
+  padding-top: 2em;
+  padding-bottom: 100px;
+}
+.btn-block{
+  margin: 0.5em;
+  background: darkgreen;
+  color: white
+}
+.main-content{
+  flex-grow: 1;
+  min-height: 100vh;
+}
+.side-bar-icon{
+  display: none;
+}
+.side-bar-text{
+  display: block;
 }
 .side-bar {
-  position: absolute;
+  position: fixed;
+  height: 100%;
   left: 0;
   width: 300px;
-  background-color: rgb(73, 73, 68);
-  height: 100vh;
-  padding: 2rem;
+  background-color: #333333;
+}
+.layout1{
+  width: 300px;
 }
 .side-bar ul {
   display: flex;
@@ -21,25 +40,34 @@
 .selected {
   background-color: darkolivegreen;
   color: whitesmoke;
+  
 }
 .navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: orange;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 10px;
+  z-index: 1000;
 }
 .logo {
-  height: 100px;
-  margin-right: 20px;
+  height: 80px;
+  margin: 20px;
 }
 .navbar h1 {
-  color: #fff;
+  color: black;
   font-size: 45px;
 }
 .footer {
   text-align: center;
   padding: 20px;
   bottom: 0;
+  padding-left: 300px;
   width: 100%;
+  background-color: rebeccapurple;
 }
 .footer a {
   color: white;
@@ -64,10 +92,35 @@ input#calorieLimit {
   padding: 1em;
   margin: 1em;
   border: 1px solid black;
-  border-radius: 5px;;
+  border-radius: 5px;
 }
 .search-box input{
   width: 100%;
   height: 25px;
   margin-bottom: 1em;
+}
+
+@media (max-width: 800px) {
+  .side-bar-icon{
+    display: block;
+  }
+  .side-bar-text{
+    display: none;
+  }
+  .search-box{
+    margin-left: 45px;
+  }
+  .navbar {
+    padding: 5px;
+    font-size: 14px;
+  }
+  .layout1{
+    width: 80px;
+  }
+  .side-bar {
+    width: 80px;
+  }
+  .home-page {
+    margin-left: 50px;;
+  }
 }

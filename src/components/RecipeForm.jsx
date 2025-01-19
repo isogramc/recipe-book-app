@@ -43,10 +43,10 @@ function RecipeForm({ addRecipe }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form onSubmit={handleSubmit} class="bg-white shadow-md rounded py-2 px-3" style={{width: "600px", justifySelf: 'center'}}>
+      <div style={{textAlign: 'left'}}>
         <label>
-          Name:
+          Name
           <input
             className="form-input"
             type="text"
@@ -54,12 +54,13 @@ function RecipeForm({ addRecipe }) {
             value={formData.name}
             onChange={handleChange}
             required
+            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           />
         </label>
       </div>
-      <div>
+      <div style={{textAlign: 'left'}}>
         <label>
-          Calories:
+          Calories
           <input
             className="form-input"
             type="number"
@@ -67,12 +68,13 @@ function RecipeForm({ addRecipe }) {
             value={formData.calories}
             onChange={handleChange}
             required
+            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           />
         </label>
       </div>
-      <div>
+      <div style={{textAlign: 'left'}}>
         <label>
-          Image URL:
+          Image URL
           <input
             className="form-input"
             type="text"
@@ -80,24 +82,26 @@ function RecipeForm({ addRecipe }) {
             value={formData.image}
             onChange={handleChange}
             required
+            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           />
         </label>
       </div>
-      <div>
+      <div style={{textAlign: 'left'}}>
         <label>
-          Description:
+          Description
           <textarea
             className="form-input"
             name="description"
             value={formData.description}
             onChange={handleChange}
             required
+            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           />
         </label>
       </div>
-      <div>
+      <div style={{textAlign: 'left'}}>
         <label>
-          Servings:
+          Servings
           <input
             className="form-input"
             type="number"
@@ -105,34 +109,37 @@ function RecipeForm({ addRecipe }) {
             value={formData.servings}
             onChange={handleChange}
             required
+            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           />
         </label>
       </div>
-      <div>
+      <div style={{textAlign: 'left'}}>
         <label>
-          Ingredients:
+          Ingredients
           <textarea
             className="form-input"
             name="ingredients"
             value={formData.ingredients}
             onChange={handleChange}
             required
+            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           />
         </label>
       </div>
-      <div>
+      <div style={{textAlign: 'left'}}>
         <label>
-          Instructions:
+          Instructions
           <textarea
             className="form-input"
             name="instructions"
             value={formData.instructions}
             onChange={handleChange}
             required
+            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           />
         </label>
       </div>
-      <button type="submit">Add Recipe</button>
+      <button className="btn-block" type="submit">Add Recipe</button>
     </form>
   );
 }

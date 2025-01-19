@@ -13,21 +13,25 @@ import Navbar from "./components/Navbar";
 import Recipes from "./assets/basic-recipes.json";
 
 function App() {
-
+  const [recipes, setRecipes] = useState(Recipes);
+  localStorage.clear();
+  
   return (
     <div>
       <Navbar />
+      <div className="main-content">
       <SideBar />
       <Routes>
-        <Route path="/" element={<HomePage props={Recipes}/>} />
-        <Route 
-          path="/recipes/:recipeId"
-          element={<DetailsPage props={Recipes} />}
-        />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/recipe/:id" element={<RecipeDetailPage />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
+          <Route path="/" element={<HomePage props={recipes}/>} />
+            <Route 
+              path="/recipes/:recipeId"
+              element={<DetailsPage props={recipes} />}
+            />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/recipe/:id" element={<RecipeDetailPage />} />
+            <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );
