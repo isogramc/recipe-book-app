@@ -19,12 +19,12 @@ function RecipeList({ recipes, setRecipes, handleOpen, showSearchByCals}) {
 
   function editRecipe(updatedRecipe) {
     let acopy = [...recipes];
-    let nindex = 0
-    acopy.forEach((recipe, index)=>{
-      if(recipe.id===updatedRecipe.id){
+    let nindex = 0;
+    acopy.forEach((recipe, index) => {
+      if (recipe.id === updatedRecipe.id) {
         nindex = index;
       }
-    })
+    });
     console.log(nindex, updatedRecipe);
     const updatedRecipes = acopy.splice(nindex, 1, updatedRecipe);
     console.log(updatedRecipes);
@@ -32,14 +32,14 @@ function RecipeList({ recipes, setRecipes, handleOpen, showSearchByCals}) {
     setAddItem(false);
   }
 
-  function handleOpen(id){
+  function handleOpen(id) {
     let irecipe = {};
-    recipes.map((item, index)=>{
-      if(item.id === id){
+    recipes.map((item, index) => {
+      if (item.id === id) {
         irecipe = item;
       }
-    })
-    setAddEditRecipe(irecipe)
+    });
+    setAddEditRecipe(irecipe);
     setAddItem(true);
   }
 
@@ -64,8 +64,12 @@ function RecipeList({ recipes, setRecipes, handleOpen, showSearchByCals}) {
         })
         .map((recipe) => (
           <Link to={`recipe/${recipe.id}`} key={recipe.id}>
-            <div class="inline">
-              <RecipeCard {...recipe} deleteItem={deleteItem} handleOpen={handleOpen}/>
+            <div className="inline">
+              <RecipeCard
+                {...recipe}
+                deleteItem={deleteItem}
+                handleOpen={handleOpen}
+              />
             </div>
           </Link>
         ))}

@@ -17,7 +17,7 @@ function App() {
   localStorage.clear();
   
   return (
-    <div>
+    <div className="app-container">
       <Navbar />
       <div className="main-content">
       <SideBar />
