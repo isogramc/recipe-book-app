@@ -30,8 +30,9 @@ function RecipeDetailPage() {
           <div className="image-preview" style={{ width: '500px', margin: '0px auto' }}>
             <AdvancedImage style={{ maxWidth: '100%' }} cldImg={cld.image(recipe.image)} plugins={[responsive(), placeholder()]} />
           </div>
-        )}
-         {!recipe.imageInCloud && <img src={recipe.image} alt={recipe.name}/>}
+      )}
+
+      {!recipe.imageInCloud && <img src={recipe.image} alt={recipe.name}/>}
 
       <p>Servings: {recipe.servings}</p>
 

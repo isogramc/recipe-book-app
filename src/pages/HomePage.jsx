@@ -47,7 +47,9 @@ function HomePage({ props }) {
   return (
     <div className="home-page">
       <div class="bg-white py-2 px-3">
-        <h1 className="text-3xl" style={{marginBottom: '0.5em'}}>My Recipes</h1>
+        <div>
+          <h1 className="text-3xl" style={{marginBottom: '0.5em'}}>My Recipes</h1>
+        </div>
         <button className="btn-block" onClick={handleToggleForm}>
           {showForm ? "Hide Form" : "Add Recipe"}
         </button>

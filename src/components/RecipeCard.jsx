@@ -21,7 +21,7 @@ function RecipeCard(props) {
   }
 
   return (
-      <div class="inline-block rounded overflow-hidden shadow-lg" style={{margin: '1em', width: '250px', backgroundColor: 'white'}}>
+      <div class="inline-block rounded overflow-hidden shadow-lg" style={{margin: '1em', width: '300px', backgroundColor: 'white'}}>
 
         {imageInCloud && (<div class='w-full overflow-hidden'  style={{height: '150px', width: '300px', verticalAlign: 'center'}}>
             <AdvancedImage cldImg={cld.image(image)} plugins={[responsive(), placeholder()]} />
@@ -35,7 +35,7 @@ function RecipeCard(props) {
           <div class="font-bold text-xl mb-2">{name}</div>
             <div class="text-gray-700 text-base">
             <div>Calories: {calories}</div>
-            <div>Servings: {servings}</div>
+            {/* <div>Servings: {serves}</div> */}
         </div>
 
       <div className="px-6 pt-4 pb-2">
