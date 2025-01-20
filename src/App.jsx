@@ -14,10 +14,9 @@ import Recipes from "./assets/basic-recipes.json";
 
 function App() {
   const [recipes, setRecipes] = useState(Recipes);
-  localStorage.clear();
   
   return (
-    <div>
+    <div className="app-container">
       <Navbar />
       <div className="main-content">
       <SideBar />

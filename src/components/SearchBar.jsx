@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 
 function SearchBox({ doSearch }){
     const [searchStr, setSearchStr] = useState("");
@@ -18,4 +18,4 @@ function SearchBox({ doSearch }){
         </div>
     )
 }
-export default SearchBox
+export default SearchBox;
