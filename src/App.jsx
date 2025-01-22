@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage";
@@ -9,12 +9,44 @@ import RecipeDetailPage from "./pages/RecipeDetailPage";
 import SideBar from "./components/SideBar";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-
 import Recipes from "./assets/basic-recipes.json";
 
 function App() {
   const [recipes, setRecipes] = useState(Recipes);
+  //local storage feature -> copy data into local storage :: DO NOT TOUCH
+  const [localStorageCopy, setLocalStorageCopy] = useState({});
+
+  const [url, updateUrl] = useState();
+  const [error, updateError] = useState();
   
+  useEffect(() => {
+    //initial setup :: (when app loads) copy fresh copy of data file into Local Storage
+    if(localStorage){
+      localStorage.setItem('recipes', JSON.stringify(recipes));
+    }
+  }, [recipes]);
+
+  useEffect(() => {
+    if (localStorage && localStorageCopy){
+      const localStorageCopy = JSON.parse(localStorage.getItem('recipes')); 
+      if(localStorageCopy.length!==recipes.length) {
+      // localstorage and initial data file is not the same so update component data
+        setRecipes(localStorageCopy); 
+      }
+    }
+  }, [localStorageCopy]);
+
+  function handleOnUpload(error, result, widget) {
+    if ( error ) {
+      updateError(error);
+      widget.close({
+        quiet: true
+      });
+      return;
+    }
+    updateUrl(result?.info?.secure_url);
+  }
+
   return (
     <div className="app-container">
       <Navbar />
@@ -31,6 +63,8 @@ function App() {
             <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
+
+
       <Footer />
     </div>
   );

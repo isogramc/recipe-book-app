@@ -14,5 +14,7 @@ function CloudinaryDisplay({customPublicId}){
           .resize(auto().gravity(autoGravity()).width(150).height(150)); // Transform the image: auto-crop to square aspect_ratio
 
     return (<AdvancedImage cldImg={img}/>);
+
+    
 }
 export default CloudinaryDisplay

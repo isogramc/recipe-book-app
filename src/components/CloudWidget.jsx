@@ -1,14 +1,13 @@
 import { WidgetLoader, Widget } from 'react-cloudinary-upload-widget'
 import { useState } from 'react';
 
-function CloudWidget({ publicId, setPublicId, setImageCloud }){
+function CloudWidget(){
 
     const successCallBack = (result) => {
         if (result && result.event === 'success') {
           console.log('Upload successful:', result.info);
-          console.log(result.info.public_id);
-          setImageCloud(true);
-          setPublicId(result.info.public_id);
+          console.log("my public id",  result.info.public_id);
+          //setPublicId(result.info.public_id);
         }
     }
 
@@ -20,7 +19,7 @@ function CloudWidget({ publicId, setPublicId, setImageCloud }){
         <div>
         <WidgetLoader />
         <Widget
-          sources={['local', 'camera']} // set the sources available for uploading -> by default
+          sources={['local', 'camera', 'unsplash']} // set the sources available for uploading -> by default
           // all sources are available. More information on their use can be found at
           // https://cloudinary.com/documentation/upload_widget#the_sources_parameter
           //sourceKeys={{dropboxAppKey: '1dsf42dl1i2', instagramClientId: 'd7aadf962m'}} // add source keys
@@ -48,9 +47,9 @@ function CloudWidget({ publicId, setPublicId, setImageCloud }){
           autoClose={false} // will close the widget after success. Default true
           onSuccess={successCallBack} // add success callback -> returns result
           onFailure={failureCallBack} // add failure callback -> returns 'response.error' + 'response.result'
-          logging={false} // logs will be provided for success and failure messages,
+          logging={true} // logs will be provided for success and failure messages,
           // set to false for production -> default = true
-          customPublicId={"testFileName"} // set a specific custom public_id.
+          customPublicId={"my-file"} // set a specific custom public_id.
           // To use the file name as the public_id use 'use_filename={true}' parameter
           eager={'w_400,h_300,c_pad|w_260,h_200,c_crop'} // add eager transformations -> deafult = null
           use_filename={true} // tell Cloudinary to use the original name of the uploaded
@@ -72,6 +71,7 @@ function CloudWidget({ publicId, setPublicId, setImageCloud }){
               complete: '#20B832',
               sourceBg: '#909090'
             },
+
             fonts: {
               default: null,
               "'Fira Sans', sans-serif": {

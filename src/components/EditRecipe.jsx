@@ -2,13 +2,19 @@ import React, { useState, StrictMode } from "react";
 import { Cloudinary } from '@cloudinary/url-gen';
 import { AdvancedImage, responsive, placeholder } from '@cloudinary/react';
 import CloudWidget from "./CloudWidget";
+import CloudinaryWidget from "./CloudinaryWidget";
 
 function EditRecipe({ recipe, editRecipe, setAddItem}) {
   const cloudName = 'dwyipecoa';
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName,
+    },
+  });
 
   // State
-  const [publicId, setPublicId] = useState('');
-  const [imageCloud, setImageCloud] = useState(recipe.imageInCloud);
+  const [publicId, setPublicId] = useState("");
+  const [uploadNow, setUploadNow] = useState(false);
 
   const [formData, setFormData] = useState({
     id: recipe.id,
@@ -22,41 +28,62 @@ function EditRecipe({ recipe, editRecipe, setAddItem}) {
     instructions: recipe.instructions,
   });
 
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName,
-    },
-  });
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  const toggleChecked = (e) => {
+    console.log(e.target.checked);
+    const { name, value } = e.target;
+    // this value is used to display the image if it is a Cloud Image
+    setUploadNow(e.target.checked);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    let updatedRecipe = {};
+    console.log(publicId);
 
-    if(imageCloud){
-      updatedRecipe = { ...formData, image: publicId, imageInCloud: true };
+    if(uploadNow && publicId !== formData.image){
+      setFormData({
+        id: formData.id,
+        name: formData.name,
+        calories: formData.calories,
+        image: publicId,
+        imageInCloud: true,
+        description: formData.description,
+        servings: formData.servings,
+        ingredients: formData.ingredients,
+        instructions: formData.instructions,
+      });
     }else{
-      updatedRecipe = { ...formData };
+      setFormData({
+        id: formData.id,
+        name: formData.name,
+        calories: formData.calories,
+        image: formData.image,
+        imageInCloud: false,
+        description: formData.description,
+        servings: formData.servings,
+        ingredients: formData.ingredients,
+        instructions: formData.instructions,
+      });
     }
+  
+    // Edit an existing recipe object
+    console.log(formData);
 
-    // Create a new recipe object with a unique ID and split ingredients & instructions
-    console.log(updatedRecipe);
-
-    // Call addRecipe function passed as prop to add new recipe
-    editRecipe(updatedRecipe);
+    // Call editRecipe function passed as prop to add new recipe
+    editRecipe(formData);
 
     // Clear the form
     setFormData({
       id: "",
-      imageInCloud: false,
       name: "",
-      calories: "",
       image: "",
+      imageInCloud: null,
+      calories: "",
       description: "",
       servings: "",
       ingredients: "",
@@ -99,7 +126,13 @@ function EditRecipe({ recipe, editRecipe, setAddItem}) {
         </label>
       </div>
       <div>
-       <label>
+        <div>*Is your image an image in Cloudinary cloud? &nbsp;&nbsp;
+          {/* This is not a formfield - it is purely used to show and hide elements :: DO NOT TOUCH */}
+        <input name="uploadNow" type="checkbox" onChange={toggleChecked} /> 
+         {/* This is not a hidden field -> IF there is a publicId this will be true :: DO NOT TOUCH */}
+        <input name="imageInCloud" type="hidden" />
+      </div>
+       {!uploadNow && <label>
           Image URL
           <input
             className="form-input"
@@ -110,15 +143,18 @@ function EditRecipe({ recipe, editRecipe, setAddItem}) {
             required
             class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           />
-        </label>
+        </label>}
 
-       <div className="cloud-widget"> <CloudWidget customPublicId={publicId} setPublicId={setPublicId} setImageCloud={setImageCloud}/>
-        {(publicId!=="") && (
-          <div className="image-preview" style={{ width: '50px', margin: '20px auto' }}>
-            <AdvancedImage style={{ maxWidth: '100%' }} cldImg={cld.image(publicId)} plugins={[responsive(), placeholder()]} />
-          </div>
-        )}
-      </div>
+       {uploadNow && <div className="cloud-widget">
+          <CloudWidget />
+
+          {(publicId!=="") && (<div className="image-preview">
+             <div style={{width: "50%", alignSelf: 'center'}} >Your upload of image named { publicId } was a success! Here is the Preview:</div>
+             <div style={{ width: '50%', margin: '20px' }}><AdvancedImage style={{ width: '150px', justifySelf: 'center'}} cldImg={cld.image(publicId)} plugins={[responsive(), placeholder()]} /></div>
+           </div>
+          )}
+      </div>}
+      
       </div>
       <div>
         <label>

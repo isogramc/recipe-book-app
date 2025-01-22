@@ -19,15 +19,6 @@ function RecipeDetailPage() {
     return <div>Recipe not found!</div>;
   }
 
-  function setImageIngredients(recipe){
-    recipe.ingredients.map((ingredient, index) => {
-
-      if(ingredient.includes("oil")){
-        setStringDesc('oil_pb9gwx.svg');
-      }
-    });
-  }
-
   return (
     <div className="recipe-page">
       <div

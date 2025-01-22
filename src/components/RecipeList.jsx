@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState} from "react";
 import RecipeCard from "./RecipeCard";
 import EditRecipe from "./EditRecipe";
 import { Link } from "react-router-dom";
@@ -18,17 +18,9 @@ function RecipeList({ recipes, setRecipes, handleOpen, showSearchByCals}) {
   }
 
   function editRecipe(updatedRecipe) {
-    let acopy = [...recipes];
-    let nindex = 0;
-    acopy.forEach((recipe, index) => {
-      if (recipe.id === updatedRecipe.id) {
-        nindex = index;
-      }
-    });
-    console.log(nindex, updatedRecipe);
-    const updatedRecipes = acopy.splice(nindex, 1, updatedRecipe);
-    console.log(updatedRecipes);
-    setRecipes(acopy);
+    const updatedItems = recipes.map(el => el.id === updatedRecipe.id ? updatedRecipe : el);
+    //console.log("expect list here", updatedItems);
+    setRecipes(updatedItems);
     setAddItem(false);
   }
 
