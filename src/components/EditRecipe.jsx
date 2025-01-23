@@ -123,7 +123,7 @@ function EditRecipe({ recipe, editRecipe, setAddItem}) {
         <div className="note">
           * Please not this feature is in development. It has been tested and is fully functional. 
           There is however a known bug. We are still investigating this and do not wish to cause you inconvenience. 
-          If you are uncertain how to use the edit/upload feature or eencounter a bug - please upload your image directly in Cloudinator site itself for now: 
+          If you are uncertain how to use the edit/upload feature or encounter a bug - please upload your image directly in Cloudinator site itself for now: 
           this feature works just as well when using the url input field with the url of your image. We apologise for any inconvenience.
         </div>
         {!uploadNow && <label>
