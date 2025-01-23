@@ -57,7 +57,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/recipe/:id" element={<RecipeDetailPage />} />
           <Route path="/random" element={<DetailsPage props={recipes}/>} />
-          <Route exact path="/random/:slug" element={<DetailsPage props={recipes}/>} />
+          <Route exact path="/recipe/:slug" element={<DetailsPage props={recipes}/>} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>

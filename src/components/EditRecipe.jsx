@@ -114,12 +114,18 @@ function EditRecipe({ recipe, editRecipe, setAddItem}) {
         </label>
       </div>
       <div>
-        <div>*Is your image an image in Cloudinary cloud and would you like to use it's display features? &nbsp;&nbsp;
+        <div>* Is your image an image in Cloudinary cloud and would you like to use it's display features? &nbsp;&nbsp;
           {/* This is not a formfield - it is purely used to show and hide elements :: DO NOT TOUCH */}
         <input name="uploadNow" type="checkbox" onChange={toggleChecked} /> 
          {/* This is not a hidden field -> IF there is a publicId this will be true :: DO NOT TOUCH */}
         <input name="imageInCloud" type="hidden" />
       </div>
+        <div className="note">
+          * Please not this feature is in development. It has been tested and is fully functional. 
+          There is however a known bug. We are still investigating this and do not wish to cause you inconvenience. 
+          If you are uncertain how to use the edit/upload feature or eencounter a bug - please upload your image directly in Cloudinator site itself for now: 
+          this feature works just as well when using the url input field with the url of your image. We apologise for any inconvenience.
+        </div>
         {!uploadNow && <label>
           Image URL
           <input
