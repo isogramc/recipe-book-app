@@ -21,24 +21,24 @@ function RecipeCard(props) {
   }
 
   return (
-      <div class="inline-block rounded overflow-hidden shadow-lg" style={{margin: '1em', width: '300px', backgroundColor: 'white'}}>
+      <div className={`inline-block rounded overflow-hidden shadow-lg`} style={{margin: '1em', width: '300px', backgroundColor: 'white'}}>
 
-        {imageInCloud && (<div class='w-full overflow-hidden'  style={{height: '150px', width: '300px', verticalAlign: 'center'}}>
+        {imageInCloud && (<div className={`w-full overflow-hidden`}  style={{height: '150px', width: '300px', verticalAlign: 'center'}}>
             <AdvancedImage cldImg={cld.image(image)} plugins={[responsive(), placeholder()]} />
           </div>)}
 
-        {!imageInCloud && <div class='w-full overflow-hidden' style={{height: '150px', width: '300px'}}>
+        {!imageInCloud && <div className={`w-full overflow-hidden`} style={{height: '150px', width: '300px'}}>
           <img style={{minWidth: '300px', minHeight: '150px'}} src={image} alt={name}/>
           </div>}
 
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">{name}</div>
-            <div class="text-gray-700 text-base">
+        <div className={`px-6 py-4`}>
+          <div className={`font-bold text-xl mb-2`}>{name}</div>
+            <div className={`text-gray-700 text-base`}>
             <div>Calories: {calories}</div>
             {/* <div>Servings: {serves}</div> */}
         </div>
 
-      <div className="px-6 pt-4 pb-2">
+      <div className={`px-6 pt-4 pb-2`}>
         <button onClick={deleteItemCard} style={{ marginRight: "0.5em" }}>
           Delete
         </button>

@@ -1,17 +1,7 @@
 import React, { useState, StrictMode } from "react";
-import { Cloudinary } from '@cloudinary/url-gen';
-import { AdvancedImage, responsive, placeholder } from '@cloudinary/react';
 import CloudWidget from "./CloudWidget";
-import CloudinaryWidget from "./CloudinaryWidget";
 
 function EditRecipe({ recipe, editRecipe, setAddItem}) {
-  const cloudName = 'dwyipecoa';
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName,
-    },
-  });
-
   // State
   const [publicId, setPublicId] = useState("");
   const [uploadNow, setUploadNow] = useState(false);
@@ -96,72 +86,68 @@ function EditRecipe({ recipe, editRecipe, setAddItem}) {
   }
 
   return (<StrictMode>
- <form onSubmit={handleSubmit} class="bg-white shadow-md rounded py-2 px-3" style={{width: "600px", justifySelf: 'center'}}>
+ <form onSubmit={handleSubmit} className={`bg-white shadow-md rounded} py-2 px-3`} style={{width: "600px", justifySelf: 'center'}}>
       <div>
         <label>
           Name
           <input
-            className="form-input"
+            className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
             type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
             required
-            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          />
+            />
         </label>
       </div>
       <div>
         <label>
           Calories
           <input
-            className="form-input"
+            className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
             type="number"
             name="calories"
             value={formData.calories}
             onChange={handleChange}
             required
-            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          />
+            />
         </label>
       </div>
       <div>
-        <div>*Is your image an image in Cloudinary cloud? &nbsp;&nbsp;
+        <div>*Is your image an image in Cloudinary cloud and would you like to use it's display features? &nbsp;&nbsp;
           {/* This is not a formfield - it is purely used to show and hide elements :: DO NOT TOUCH */}
         <input name="uploadNow" type="checkbox" onChange={toggleChecked} /> 
          {/* This is not a hidden field -> IF there is a publicId this will be true :: DO NOT TOUCH */}
         <input name="imageInCloud" type="hidden" />
       </div>
-       {!uploadNow && <label>
+        {!uploadNow && <label>
           Image URL
           <input
-            className="form-input"
+            className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
             type="text"
             name="image"
             value={formData.image}
             onChange={handleChange}
             required
-            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          />
+            />
         </label>}
 
        {uploadNow && <div className="cloud-widget">
-          <CloudWidget />
+          <CloudWidget setPublicId={setPublicId} />
 
           {(publicId!=="") && (<div className="image-preview">
-             <div style={{width: "50%", alignSelf: 'center'}} >Your upload of image named { publicId } was a success! Here is the Preview:</div>
-             <div style={{ width: '50%', margin: '20px' }}><AdvancedImage style={{ width: '150px', justifySelf: 'center'}} cldImg={cld.image(publicId)} plugins={[responsive(), placeholder()]} /></div>
+             <div style={{width: "50%", alignSelf: 'center'}} >Your upload of image <span style={{width: '50px', overflow: 'hidden'}}>{ publicId }</span> was a success! Here is the Preview:</div>
+             <div style={{ width: '50%', margin: '20px' }}><img style={{width: '100px'}} src={ publicId } alt="image upload preview"/></div>
            </div>
           )}
-      </div>}
+        </div>}
       
       </div>
       <div>
         <label>
           Description
           <textarea
-            className="form-input"
-            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
             name="description"
             value={formData.description}
             onChange={handleChange}
@@ -173,8 +159,7 @@ function EditRecipe({ recipe, editRecipe, setAddItem}) {
         <label>
           Servings
           <input
-            className="form-input"
-            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
             type="number"
             name="servings"
             value={formData.servings}
@@ -187,8 +172,7 @@ function EditRecipe({ recipe, editRecipe, setAddItem}) {
         <label>
           Ingredients
           <textarea
-            className="form-input"
-            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
             name="ingredients"
             value={formData.ingredients}
             onChange={handleChange}
@@ -200,8 +184,7 @@ function EditRecipe({ recipe, editRecipe, setAddItem}) {
         <label>
           Instructions
           <textarea
-            className="form-input"
-            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
             name="instructions"
             value={formData.instructions}
             onChange={handleChange}
@@ -210,7 +193,7 @@ function EditRecipe({ recipe, editRecipe, setAddItem}) {
         </label>
       </div>
       <button className="btn-block" type="submit">Edit Recipe</button>
-      <button className="btn-block" onClick={cancelEdit}>Cancel Edit</button>
+      <button className="btn-block" onClick={cancelEdit}>Close Edit</button>
     </form>
 
  

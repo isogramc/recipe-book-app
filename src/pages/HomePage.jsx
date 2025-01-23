@@ -26,6 +26,7 @@ function HomePage({ props }) {
       setRecipes(localStorageCopy);     
     }
   }, [localStorageCopy]);
+  // end localstorage implementation
 
   const addRecipe = (newRecipe) => {
     setRecipes((prevRecipes) => {
@@ -64,7 +65,7 @@ function HomePage({ props }) {
 
   return (
     <div className="home-page">
-      <div class="bg-white py-2 px-3">
+      <div className={`bg-white py-2 px-3`}>
         <div>
           <h1 className="text-3xl" style={{marginBottom: '0.5em'}}>My Recipes</h1>
         </div>

@@ -4,8 +4,8 @@ function Footer() {
   return (
     <footer className="footer">
       <p>
-        &copy; 2025 My Recipe Book App -&gt;&nbsp; 
-        <a href="https://github.com/brunellanmcarvalho1/recipe-book-app">
+        <span>&copy; 2025 My Recipe Book App -&gt;&nbsp;</span> 
+        <a href="https://github.com/isogramc/recipe-book-app">
           GitHub Repository
         </a>
       </p>

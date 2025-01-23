@@ -38,7 +38,7 @@ function RecipeList({ recipes, setRecipes, handleOpen, showSearchByCals}) {
   return (
     <div className="recipe-list">
       {addItem && <EditRecipe recipe={addEditRecipe} editRecipe={editRecipe} setAddItem={setAddItem}/>}
-      {showSearchByCals && <form class="bg-white shadow-md rounded py-2 px-3" style={{width: "600px", justifySelf: 'center', textAlign: "left"}}>
+      {showSearchByCals && <form className={`bg-white shadow-md rounded py-2 px-3`} style={{width: "600px", justifySelf: 'center', textAlign: "left"}}>
           <label htmlFor="calorieLimit">
             Search Recipes by Calorie Limit
               <input
@@ -46,7 +46,7 @@ function RecipeList({ recipes, setRecipes, handleOpen, showSearchByCals}) {
                 id="calorieLimit"
                 value={calorieLimit}
                 onChange={handleCalorieChange}
-                class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
                 style={{background: 'white', color: 'black'}}/>
           </label>
       </form>}

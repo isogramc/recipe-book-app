@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 
 function RecipeForm({ addRecipe }) {
+  let navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     calories: "",
@@ -9,6 +11,7 @@ function RecipeForm({ addRecipe }) {
     servings: "",
     ingredients: "",
     instructions: "",
+    foundOn: "",
   });
 
   const handleChange = (e) => {
@@ -39,6 +42,7 @@ function RecipeForm({ addRecipe }) {
       servings: "",
       ingredients: "",
       instructions: "",
+      foundOn: ""
     });
   };
 
@@ -48,54 +52,50 @@ function RecipeForm({ addRecipe }) {
         <label>
           Name
           <input
-            className="form-input"
+            className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
             type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
             required
-            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          />
+            />
         </label>
       </div>
       <div style={{textAlign: 'left'}}>
         <label>
           Calories
           <input
-            className="form-input"
+            className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
             type="number"
             name="calories"
             value={formData.calories}
             onChange={handleChange}
             required
-            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          />
+            />
         </label>
       </div>
       <div style={{textAlign: 'left'}}>
         <label>
           Image URL
           <input
-            className="form-input"
+            className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
             type="text"
             name="image"
             value={formData.image}
             onChange={handleChange}
             required
-            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          />
+            />
         </label>
       </div>
       <div style={{textAlign: 'left'}}>
         <label>
           Description
           <textarea
-            className="form-input"
+            className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
             name="description"
             value={formData.description}
             onChange={handleChange}
-            required
-            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            required  
           />
         </label>
       </div>
@@ -103,13 +103,12 @@ function RecipeForm({ addRecipe }) {
         <label>
           Servings
           <input
-            className="form-input"
+            className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
             type="number"
             name="servings"
             value={formData.servings}
             onChange={handleChange}
             required
-            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           />
         </label>
       </div>
@@ -117,12 +116,11 @@ function RecipeForm({ addRecipe }) {
         <label>
           Ingredients
           <textarea
-            className="form-input"
+            className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
             name="ingredients"
             value={formData.ingredients}
             onChange={handleChange}
             required
-            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           />
         </label>
       </div>
@@ -130,16 +128,17 @@ function RecipeForm({ addRecipe }) {
         <label>
           Instructions
           <textarea
-            className="form-input"
+            className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
             name="instructions"
             value={formData.instructions}
             onChange={handleChange}
             required
-            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           />
         </label>
+        <input name="foundOn" value="foundOn" type="hidden"/>
       </div>
       <button className="btn-block" type="submit">Add Recipe</button>
+      <button className="btn-block" onClick={()=>{navigate("/random")}}>Random Recipe</button>
     </form>
   );
 }

@@ -3,9 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import DetailsPage from "./pages/DetailsPage";
 import ErrorPage from "./pages/ErrorPage";
 import RecipeDetailPage from "./pages/RecipeDetailPage";
+import DetailsPage from "./pages/DetailsPage";
 import SideBar from "./components/SideBar";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -54,17 +54,13 @@ function App() {
       <SideBar />
       <Routes>
           <Route path="/" element={<HomePage props={recipes}/>} />
-            <Route 
-              path="/recipes/:recipeId"
-              element={<DetailsPage props={recipes} />}
-            />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/recipe/:id" element={<RecipeDetailPage />} />
-            <Route path="*" element={<ErrorPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/recipe/:id" element={<RecipeDetailPage />} />
+          <Route path="/random" element={<DetailsPage props={recipes}/>} />
+          <Route exact path="/random/:slug" element={<DetailsPage props={recipes}/>} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
-
-
       <Footer />
     </div>
   );

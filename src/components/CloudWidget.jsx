@@ -1,13 +1,14 @@
 import { WidgetLoader, Widget } from 'react-cloudinary-upload-widget'
 import { useState } from 'react';
 
-function CloudWidget(){
+function CloudWidget({setPublicId}){
 
     const successCallBack = (result) => {
         if (result && result.event === 'success') {
           console.log('Upload successful:', result.info);
           console.log("my public id",  result.info.public_id);
-          //setPublicId(result.info.public_id);
+          console.log("image url", result.info.url);
+          setPublicId(result.info.url);
         }
     }
 

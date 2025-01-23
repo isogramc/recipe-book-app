@@ -22,7 +22,8 @@
       "Sprinkle mozzarella cheese evenly over the sauce.",
       "Add pepperoni slices and sprinkle with Italian herbs.",
       "Drizzle a little olive oil on top, Bake in the oven for 10-15 minutes or until the crust is golden brown."
-    ]
+    ],
+    "foundOn": "original"
   },
   {
     "id": "37e0b31d-63f4-4d42-9f4b-e9a0fc464d60",
@@ -47,7 +48,8 @@
       "Drizzle with olive oil and lemon juice.",
       "Season with salt and pepper to taste.",
       "Toss gently to combine."
-    ]
+    ],
+    "foundOn": "original"
   },
   {
     "id": "b5eb5b5f-41b8-4f1f-8844-7a1a56a17df7",
@@ -70,7 +72,8 @@
       "Toss in olive oil, salt, pepper, and cinnamon.",
       "Arrange on a baking sheet in a single layer.",
       "Roast for 25-30 minutes, flipping halfway through."
-    ]
+    ],
+    "foundOn": "original"
   },
   {
     "id": "6c0f6f33-8c50-403d-9d1c-6ac9d8b77f29",
@@ -95,7 +98,8 @@
       "Simmer tomato sauce in a pan.",
       "Add gnocchi to the sauce and mix well.",
       "Serve with grated Parmesan and fresh basil."
-    ]
+    ],
+    "foundOn": "original"
   },
   {
     "id": "f4b4d2bc-ff12-4f3f-b3b3-19d2f1682401",
@@ -123,7 +127,8 @@
       "Add chopped vegetables and garlic.",
       "Pour in beef broth.",
       "Cover and roast in the oven for 3-4 hours."
-    ]
+    ],
+    "foundOn": "original"
   },
   {
     "id": "bf89c1db-5c5b-4262-9d1e-8a68f88c61d5",
@@ -149,7 +154,8 @@
       "Layer noodles, meat sauce, ricotta, and mozzarella in a baking dish.",
       "Repeat layers, finishing with cheese.",
       "Bake at 180°C (356°F) for 45 minutes."
-    ]
+    ],
+    "foundOn": "original"
   },
   {
     "id": "bca9beec-43d3-48b1-9b57-793a8a8c3520",
@@ -174,7 +180,8 @@
       "Form ground beef into patties, season with salt and pepper.",
       "Cook patties on a grill or pan over medium heat.",
       "Assemble burgers with buns, lettuce, tomato, cheese, and condiments."
-    ]
+    ],
+    "foundOn": "original"
   },
   {
     "id": "b777a69a-7f1c-41e8-8a4c-1d0e9e4cace8",
@@ -200,7 +207,8 @@
       "Stir in Pad Thai sauce and cook for 2 minutes.",
       "Push everything to one side of the pan, add egg, scramble, and mix.",
       "Garnish with peanuts and green onions."
-    ]
+    ],
+    "foundOn": "original"
   },
   {
     "id": "d087343e-9a92-48c7-8b27-43e37491b6f5",
@@ -213,7 +221,8 @@
     "ingredients": ["Whole almonds"],
     "instructions": [
       "Enjoy raw or lightly toast almonds in a pan over medium heat."
-    ]
+    ],
+    "foundOn": "original"
   },
   {
     "id": "e1f87a2e-60b3-4a3f-bb48-20a396a9a94f",
@@ -236,7 +245,8 @@
       "Roll mixture in grape leaves.",
       "Arrange in a pot, cover with water and lemon juice.",
       "Simmer on low heat for 1-1.5 hours."
-    ]
+    ],
+    "foundOn": "original"
   },
   {
     "id": "0ce7e4d4-1c8a-4e9f-98df-1ecb1e7b8a0b",
@@ -250,7 +260,8 @@
     "instructions": [
       "Cook bacon in a pan over medium heat until crispy.",
       "Drain on paper towels."
-    ]
+    ],
+    "foundOn": "original"
   },
   {
     "id": "bbfd30fd-cd75-4e3b-8fc8-3d3fd62a3c39",
@@ -270,7 +281,8 @@
     "instructions": [
       "Boil or grill hot dog sausages.",
       "Place in buns and top with desired condiments."
-    ]
+    ],
+    "foundOn": "original"
   },
   {
     "id": "1c6d5b5f-4e72-4136-8c6c-9cf3e3d16a65",
@@ -296,7 +308,8 @@
       "Combine and pour into a greased cake pan.",
       "Bake for 30-35 minutes until a toothpick comes out clean.",
       "Let cool, then frost with chocolate frosting."
-    ]
+    ],
+    "foundOn": "original"
   },
   {
     "id": "07d9616d-7a63-457c-b8a7-58f6a70a67e3",
@@ -318,7 +331,8 @@
       "Add flour and salt, knead into a dough.",
       "Let rise until doubled in size.",
       "Shape into a loaf and bake at 180°C (356°F) for 30-35 minutes."
-    ]
+    ],
+    "foundOn": "original"
   },
   {
     "id": "d7a8f0c1-0a34-4e3b-a2d3-3c3e3f11eb19",
@@ -329,7 +343,8 @@
     "description": "Sweet and juicy, oranges are a refreshing and healthy snack.",
     "servings": 1,
     "ingredients": ["Oranges"],
-    "instructions": ["Peel and segment oranges to enjoy as a snack."]
+    "instructions": ["Peel and segment oranges to enjoy as a snack."],
+    "foundOn": "original"
   },
   {
     "id": "a8d111c4-50ef-4c61-8b16-17e84a86b2f4",
@@ -340,7 +355,8 @@
     "description": "A sweet and convenient fruit, rich in potassium and easy to eat on the go.",
     "servings": 1,
     "ingredients": ["Bananas"],
-    "instructions": ["Peel and eat bananas raw."]
+    "instructions": ["Peel and eat bananas raw."],
+    "foundOn": "original"
   },
   {
     "id": "62d8a0bc-1b77-4389-9e7b-2e00cace6a2e",
@@ -353,6 +369,7 @@
     "ingredients": ["Plain yogurt"],
     "instructions": [
       "Serve yogurt as is or top with fruits, nuts, and honey for added flavor."
-    ]
+    ],
+    "foundOn": "original"
   }
 ]

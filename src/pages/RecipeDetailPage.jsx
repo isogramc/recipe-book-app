@@ -1,10 +1,14 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Recipes from "../assets/basic-recipes.json";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Cloudinary } from '@cloudinary/url-gen';
 import { AdvancedImage, responsive, placeholder } from '@cloudinary/react';
 
 function RecipeDetailPage() {
+  const [recipes, setRecipes] = useState(Recipes);
+  // local storage feature implementation ADD RECIPE :: DO NOT TOUCH 
+  const [localStorageCopy, setLocalStorageCopy] = useState({});
+  const [localStorageUpdatedRecipes, setLocalStorageUpdatedRecipes] = useState({});
   const cloudName = 'dwyipecoa';
   const cld = new Cloudinary({
     cloud: {
@@ -12,8 +16,22 @@ function RecipeDetailPage() {
     },
   });
   const { id } = useParams();
-  const recipe = Recipes.find((recipe) => recipe.id === id);
+  const recipe = recipes.find((recipe) => recipe.id === id);
   const [stringDesc, setStringDesc] = useState("");
+
+  useEffect(() => {
+    if(localStorage && localStorageUpdatedRecipes.length !== localStorageCopy.length){
+      // localstorage and initial data file is not the same so update component data
+      localStorage.setItem('recipes', JSON.stringify(localStorageUpdatedRecipes));
+    } 
+  }, [localStorageUpdatedRecipes]);
+
+  useEffect(() => {
+    const localStorageCopy = JSON.parse(localStorage.getItem('recipes'));
+    if (localStorage && localStorageCopy.length!==localStorageUpdatedRecipes.length) {
+      setRecipes(localStorageCopy);     
+    }
+  }, [localStorageCopy]);
 
   if (!recipe) {
     return <div>Recipe not found!</div>;
@@ -22,7 +40,7 @@ function RecipeDetailPage() {
   return (
     <div className="recipe-page">
       <div
-        class="inline-block rounded overflow-hidden shadow-lg"
+        className={`inline-block rounded overflow-hidden shadow-lg`}
         style={{ margin: "1em", width: "800px", backgroundColor: "white" }}
       >
         <div
@@ -40,7 +58,7 @@ function RecipeDetailPage() {
 
         <div>
           {recipe.imageInCloud && (
-            <div class="w-full overflow-hidden">
+            <div className={`w-full overflow-hidden`}>
               <AdvancedImage
                 style={{ maxWidth: "100%" }}
                 cldImg={cld.image(recipe.image)}
@@ -82,6 +100,7 @@ function RecipeDetailPage() {
             ))}
           </ol>
         </div>
+        <div style={{margin: '50px'}}><Link to="/"> &lt; Back</Link> </div>
       </div>
     </div>
   );
