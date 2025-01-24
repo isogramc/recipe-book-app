@@ -90,8 +90,8 @@ function EditRecipe({ recipe, editRecipe, setAddItem}) {
       <div>
         <label>
           Name
-          <input
-            className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
+          <input        
+            className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
             type="text"
             name="name"
             value={formData.name}
@@ -104,7 +104,7 @@ function EditRecipe({ recipe, editRecipe, setAddItem}) {
         <label>
           Calories
           <input
-            className={`shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
+            className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
             type="number"
             name="calories"
             value={formData.calories}
@@ -120,12 +120,6 @@ function EditRecipe({ recipe, editRecipe, setAddItem}) {
          {/* This is not a hidden field -> IF there is a publicId this will be true :: DO NOT TOUCH */}
         <input name="imageInCloud" type="hidden" />
       </div>
-        <div className="note">
-          * Please not this feature is in development. It has been tested and is fully functional. 
-          There is however a known bug. We are still investigating this and do not wish to cause you inconvenience. 
-          If you are uncertain how to use the edit/upload feature or encounter a bug - please upload your image directly in Cloudinator site itself for now: 
-          this feature works just as well when using the url input field with the url of your image. We apologise for any inconvenience.
-        </div>
         {!uploadNow && <label>
           Image URL
           <input
@@ -140,6 +134,13 @@ function EditRecipe({ recipe, editRecipe, setAddItem}) {
 
        {uploadNow && <div className="cloud-widget">
           <CloudWidget setPublicId={setPublicId} />
+
+          <div className="note">
+          * Please note this feature is in development. It has been tested and is fully functional. 
+          There is however a known bug. We are still investigating this and do not wish to cause you inconvenience. 
+          If you are uncertain how to use the edit/upload feature or encounter a bug - please upload your image directly in Cloudinator site itself for now: 
+          this feature works just as well when using the url input field with the url of your image. We apologise for any inconvenience.
+          </div>
 
           {(publicId!=="") && (<div className="image-preview">
              <div style={{width: "50%", alignSelf: 'center'}} >Your upload of image <span style={{width: '50px', overflow: 'hidden'}}>{ publicId }</span> was a success! Here is the Preview:</div>

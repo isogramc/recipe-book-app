@@ -22,14 +22,18 @@ function DetailsPage(props){
   useEffect(() => {
     // the mealsdb is a free recipe database and it is available to use online
     const fetchData = async () => {
-      const result = await fetch(url);
-      result.json().then(json => {
-        //console.log(json.meals);
-        for (let [key, value] of Object.entries(json.meals)){
+      try{ 
+        const result = await fetch(url);
+        result.json().then(json => {
+          //console.log(json.meals);
+          for (let [key, value] of Object.entries(json.meals)){
           // console.log("key",  key, "value", value);
           setRecipe(value);
-        };
-      }).catch((err) => console.log(err));
+          };
+        })
+      } catch (error) { 
+        console.log("Something went wrong", error) 
+      };
     }
     fetchData();
    }, []);
