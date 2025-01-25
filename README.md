@@ -1,6 +1,6 @@
 [Live Site deployed on Netlify](https://my-recipe-app-demo.netlify.app/)
 
-[Site Presentation]([https://res.cloudinary.com/dwyipecoa/image/upload/v1737799608/PXL_20250125_100554204_hzalqf.jpg](https://docs.google.com/presentation/d/1uyHMoinVAZuJlPT9HOWPHFQIHabR5Ht-kdRdCxPt-Ps/edit#slide=id.p))
+[Site Presentation](https://docs.google.com/presentation/d/1uyHMoinVAZuJlPT9HOWPHFQIHabR5Ht-kdRdCxPt-Ps/edit?usp=sharing)
 
 # Welcome to our recipe book!
 
